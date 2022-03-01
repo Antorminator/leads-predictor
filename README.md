@@ -27,6 +27,20 @@ df.head().T # Visualización de las columnas con algunas filas de ejemplo
 
 
 
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -350,6 +364,20 @@ df.describe()
 
 
 
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -541,6 +569,20 @@ df.head().T
 
 
 
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1021,6 +1063,20 @@ df.head().T
 
 
 
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1359,28 +1415,7 @@ Para buscar la mejor configuración del modelo usaremos ***RandomizedSearchCV***
 
 # Serialización del modelo
 
-Para serializar nuestro modelo, primero debemos vectorizar las propiedades analizadas. Lo haremos utilizando *DictVectorizer*:
-
-
-```python
-from sklearn.feature_extraction import DictVectorizer
-
-train_dict = pd.concat([data_train, target_train], axis=1) # Unimos los datos de entrenamiento
-train_dict = train_dict.to_dict(orient='records')
-dict(sorted(train_dict[0].items())) # Los ordenamos
-
-dv = DictVectorizer(sparse=False)
-dv.fit(train_dict)
-```
-
-
-
-
-    DictVectorizer(sparse=False)
-
-
-
-Para exportar nuestro modelo, lo serializamos el modelo utilizando *pickle*:
+Para exportar nuestro modelo, lo serializamos utilizando *pickle*:
 
 
 ```python
